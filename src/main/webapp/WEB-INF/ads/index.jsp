@@ -14,11 +14,23 @@
 
     <c:forEach var="ad" items="${ads}">
         <div class="col-md-6">
-            <h2>${ad.title}</h2>
-            <p>${ad.description}</p>
+            <div class="card" style="width: 18rem;">
+                <img class="card-img-top" src="http://placecage.com/c/200/300" alt="cage placeholder">
+                <div class="card-body">
+                    <h5 class="card-title">${ad.title}</h5>
+                    <p class="card-text">${ad.description}</p>
+                    <a href="../ads/index.jsp" class="btn btn-primary">Return to Adds</a>
+                    <a href="#" class="btn btn-primary">Interested? Click Here</a>
+                </div>
+            </div>
         </div>
+
     </c:forEach>
 </div>
 
+
+
+
+    <jsp:include page="/WEB-INF/partials/bundler.jsp" />
 </body>
 </html>
