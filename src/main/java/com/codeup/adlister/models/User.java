@@ -28,6 +28,10 @@ public class User {
 //        this.password = password;
 //    }
 
+
+    public User() {
+    }
+
     public User(String first_name, String last_name, String username, String email, String password, String location) {
         this.first_name = first_name;
         this.last_name = last_name;
@@ -35,13 +39,11 @@ public class User {
         this.password = password;
         this.location = location;
         this.username = username;
-        this.user_since = user_since;
-        this.id = id;
         setPassword(password);
     }
 
-    public User(String first_name, String last_name, String location, long id, String username, String email, String password) {
-    }
+
+
 
     public long getId() {
         return id;
