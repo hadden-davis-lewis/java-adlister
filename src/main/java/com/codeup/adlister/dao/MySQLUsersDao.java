@@ -62,15 +62,20 @@ public class MySQLUsersDao implements Users {
         if (! rs.next()) {
             return null;
         }
-        return new User(
-                rs.getString("first_name"),
-            rs.getString("last_name"),
-            rs.getString("location"),
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
-        );
+        User newUser = new User();
+
+        newUser.setId(rs.getInt("id"));
+        newUser.setPassword(rs.getString("password"));
+        newUser.setFirst_name(rs.getString("first_name"));
+        newUser.setLast_name(rs.getString("last_name"));
+        newUser.setEmail(rs.getString("email"));
+        newUser.setUsername(rs.getString("username"));
+        newUser.setPassword(rs.getString("password"));
+        newUser.setLocation(rs.getString("location"));
+        newUser.setUser_since(rs.getString("user_since"));
+
+        return newUser;
+
     }
 
 }
