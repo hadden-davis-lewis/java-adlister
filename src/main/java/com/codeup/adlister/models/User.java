@@ -42,7 +42,20 @@ public class User {
         setPassword(password);
     }
 
+    public User(int id, String first_name, String last_name, String username, String email, String password, String location, String user_since) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.location = location;
+        this.username = username;
+        setPassword(password);
+        this.id = id;
+        this.user_since = user_since;
+    }
 
+//    public User(int id, String password, String first_name, String last_name, String email, String username, String password1, String location, String user_since) {
+//    }
 
 
     public long getId() {

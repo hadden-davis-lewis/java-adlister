@@ -12,9 +12,9 @@ public class MySQLUsersDao implements Users {
         try {
             DriverManager.registerDriver(new Driver());
             connection = DriverManager.getConnection(
-                config.getUrl(),
-                config.getUser(),
-                config.getPassword()
+                    config.getUrl(),
+                    config.getUser(),
+                    config.getPassword()
             );
         } catch (SQLException e) {
             throw new RuntimeException("Error connecting to the database!", e);
@@ -59,23 +59,35 @@ public class MySQLUsersDao implements Users {
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
-        if (! rs.next()) {
+        if (!rs.next()) {
             return null;
         }
-        User newUser = new User();
-
-        newUser.setId(rs.getInt("id"));
-        newUser.setPassword(rs.getString("password"));
-        newUser.setFirst_name(rs.getString("first_name"));
-        newUser.setLast_name(rs.getString("last_name"));
-        newUser.setEmail(rs.getString("email"));
-        newUser.setUsername(rs.getString("username"));
-        newUser.setPassword(rs.getString("password"));
-        newUser.setLocation(rs.getString("location"));
-        newUser.setUser_since(rs.getString("user_since"));
-
-        return newUser;
-
+//        User newUser = new User();
+        return new User(
+                rs.getInt("id"),
+                rs.getString("password"),
+                rs.getString("first_name"),
+                rs.getString("last_name"),
+                rs.getString("email"),
+                rs.getString("username"),
+                rs.getString("location"),
+                rs.getString("user_since")
+        );
     }
+
+
+//        newUser.setId(rs.getInt("id"));
+//        newUser.setPassword(rs.getString("password"));
+//        newUser.setFirst_name(rs.getString("first_name"));
+//        newUser.setLast_name(rs.getString("last_name"));
+//        newUser.setEmail(rs.getString("email"));
+//        newUser.setUsername(rs.getString("username"));
+//        newUser.setPassword(rs.getString("password"));
+//        newUser.setLocation(rs.getString("location"));
+//        newUser.setUser_since(rs.getString("user_since"));
+//
+//        return newUser;
+//
+//    }
 
 }
