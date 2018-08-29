@@ -61,28 +61,32 @@ DROP TABLE IF EXISTS review;
 
 CREATE TABLE IF NOT EXISTS review (
   id INT UNSIGNED NOT NULL  AUTO_INCREMENT,
+  reviewer_id INT UNSIGNED NOT NULL,
+  lister_id INT UNSIGNED NOT NULL,
   rating INT  UNSIGNED  NOT NULL,
   review VARCHAR(255) NOT NULL,
-  PRIMARY KEY (id)
+  PRIMARY KEY (id),
+  FOREIGN KEY (reviewer_id) REFERENCES user(id),
+  FOREIGN KEY (lister_id) REFERENCES user(id)
 );
 
 
 DROP TABLE IF EXISTS user_reviews;
+#
+# CREATE TABLE IF NOT EXISTS user_reviews (
+#   user_id INT UNSIGNED  NOT NULL,
+#   review_id INT UNSIGNED  NOT NULL,
+#   FOREIGN KEY (user_id) REFERENCES user (id),
+#   FOREIGN KEY (review_id) REFERENCES review (id)
+# );
 
-CREATE TABLE IF NOT EXISTS user_reviews (
-  user_id INT UNSIGNED  NOT NULL,
-  review_id INT UNSIGNED  NOT NULL,
-  FOREIGN KEY (user_id) REFERENCES user (id),
-  FOREIGN KEY (review_id) REFERENCES review (id)
-);
 
-
-describe user;
-describe ad;
-describe category;
-describe ads_categories;
-
-SELECT * from user;
-select * from ad;
-select * from category;
+# describe user;
+# describe ad;
+# describe category;
+# describe ads_categories;
+#
+# SELECT * from user;
+# select * from ad;
+# select * from category;
 
