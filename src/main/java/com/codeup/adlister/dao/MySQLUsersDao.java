@@ -47,7 +47,7 @@ public class MySQLUsersDao implements Users {
             stmt.setString(4, user.getUsername());
             stmt.setString(5, user.getPassword());
             stmt.setString(6, user.getLocation());
-            stmt.setString(7, user.getProfile_pic());
+
 
             stmt.executeUpdate();
             ResultSet rs = stmt.getGeneratedKeys();
@@ -62,12 +62,20 @@ public class MySQLUsersDao implements Users {
         if (! rs.next()) {
             return null;
         }
-        return new User(
-            rs.getLong("id"),
-            rs.getString("username"),
-            rs.getString("email"),
-            rs.getString("password")
-        );
+        User newUser = new User();
+
+        newUser.setId(rs.getInt("id"));
+        newUser.setPassword(rs.getString("password"));
+        newUser.setFirst_name(rs.getString("first_name"));
+        newUser.setLast_name(rs.getString("last_name"));
+        newUser.setEmail(rs.getString("email"));
+        newUser.setUsername(rs.getString("username"));
+        newUser.setPassword(rs.getString("password"));
+        newUser.setLocation(rs.getString("location"));
+        newUser.setUser_since(rs.getString("user_since"));
+
+        return newUser;
+
     }
 
 }

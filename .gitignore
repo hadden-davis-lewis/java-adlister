@@ -1,4 +1,9 @@
+
 *.iml
 target/
 .idea/
 Config.java
+<<<<<<< ad-daoServlet_functionality
+=======
+
+>>>>>>> master

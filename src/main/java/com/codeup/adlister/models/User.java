@@ -13,20 +13,37 @@ public class User {
     private String profile_pic;
     private String user_since;
 
-    public User() {}
+//    public User(String first_name, String last_name, String location, long id, String username, String email, String password) {}
 
-    public User(String username, String email, String password) {
-        this.username = username;
+//    public User(String username, String email, String password) {
+//        this.username = username;
+//        this.email = email;
+//        setPassword(password);
+//    }
+
+//    public User(long id, String username, String email, String password) {
+//        this.id = id;
+//        this.username = username;
+//        this.email = email;
+//        this.password = password;
+//    }
+
+
+    public User() {
+    }
+
+    public User(String first_name, String last_name, String username, String email, String password, String location) {
+        this.first_name = first_name;
+        this.last_name = last_name;
         this.email = email;
+        this.password = password;
+        this.location = location;
+        this.username = username;
         setPassword(password);
     }
 
-    public User(long id, String username, String email, String password) {
-        this.id = id;
-        this.username = username;
-        this.email = email;
-        this.password = password;
-    }
+
+
 
     public long getId() {
         return id;
