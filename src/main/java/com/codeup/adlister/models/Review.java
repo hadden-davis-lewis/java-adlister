@@ -4,18 +4,18 @@ public class Review {
     private int id;
     private int reviewer_id;
     private int lister_id;
-    private float rating;
+    private int rating;
     private String review;
 
     public Review() {
     }
 
-    public Review(float rating, String review) {
+    public Review(int rating, String review) {
         this.rating = rating;
         this.review = review;
     }
 
-    public Review(int id, float rating, String review) {
+    public Review(int id, int rating, String review) {
         this.id = id;
         this.rating = rating;
         this.review = review;
@@ -49,7 +49,7 @@ public class Review {
         return rating;
     }
 
-    public void setRating(float rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 
