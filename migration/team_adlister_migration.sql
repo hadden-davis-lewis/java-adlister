@@ -29,9 +29,9 @@ CREATE TABLE IF NOT EXISTS ad (
   title VARCHAR(100) NOT NULL,
   description VARCHAR(255)  NOT NULL,
   photo  VARCHAR(255) NOT NULL,
-  date_added VARCHAR(100) NOT NULL,
-  price DOUBLE UNSIGNED NOT NULL,
-  location VARCHAR(255) NOT NULL,
+  date_added VARCHAR(100),
+  price DOUBLE UNSIGNED,
+  location VARCHAR(255),
   PRIMARY KEY (id),
   FOREIGN KEY (user_id) REFERENCES user (id)
 );
