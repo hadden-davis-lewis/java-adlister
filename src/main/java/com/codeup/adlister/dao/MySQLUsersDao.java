@@ -36,7 +36,7 @@ public class MySQLUsersDao implements Users {
 
     @Override
     public Long insert(User user) {
-   ad-adjustUsersDao
+
         String query = "INSERT INTO users(first_name, last_name, email, username, password, location, profile_pic, user_since) VALUES (?,?,?,?,?,?,?,NOW())";
 
         try {
