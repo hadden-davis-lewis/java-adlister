@@ -13,7 +13,7 @@ public class User {
     private String profile_pic;
     private String user_since;
 
-    public User() {}
+    public User(String first_name, String last_name, String location, long id, String username, String email, String password) {}
 
     public User(String username, String email, String password) {
         this.username = username;
