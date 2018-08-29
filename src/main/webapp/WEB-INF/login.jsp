@@ -20,6 +20,7 @@
             </div>
             <input type="submit" class="btn btn-primary btn-block" value="Log In">
         </form>
+        <a href="/register"><button>Signup</button></a>
     </div>
     <jsp:include page="/WEB-INF/partials/bundler.jsp" />
 </body>

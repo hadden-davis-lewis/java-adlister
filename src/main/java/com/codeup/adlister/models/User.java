@@ -49,7 +49,6 @@ public class User {
         this.password = password;
         this.location = location;
         this.username = username;
-        setPassword(password);
         this.id = id;
         this.user_since = user_since;
     }

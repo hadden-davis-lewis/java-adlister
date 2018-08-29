@@ -16,8 +16,11 @@ public class MySQLUsersDao implements Users {
                     config.getUser(),
                     config.getPassword()
             );
-        } catch (SQLException e) {
-            throw new RuntimeException("Error connecting to the database!", e);
+        } catch(SQLIntegrityConstraintViolationException e){
+            throw new RuntimeException("Username must be unique");
+        }catch (SQLException e) {
+            e.toString();
+            throw new RuntimeException("Error connecting to the database!");
         }
     }
 
@@ -56,6 +59,7 @@ public class MySQLUsersDao implements Users {
         } catch (SQLException e) {
             throw new RuntimeException("Error creating new user", e);
         }
+
     }
 
     private User extractUser(ResultSet rs) throws SQLException {
@@ -65,11 +69,11 @@ public class MySQLUsersDao implements Users {
 //        User newUser = new User();
         return new User(
                 rs.getInt("id"),
-                rs.getString("password"),
                 rs.getString("first_name"),
                 rs.getString("last_name"),
-                rs.getString("email"),
                 rs.getString("username"),
+                rs.getString("email"),
+                rs.getString("password"),
                 rs.getString("location"),
                 rs.getString("user_since")
         );
