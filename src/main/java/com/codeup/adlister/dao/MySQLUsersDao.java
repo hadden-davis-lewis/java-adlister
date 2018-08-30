@@ -4,6 +4,8 @@ import com.codeup.adlister.models.User;
 import com.mysql.cj.jdbc.Driver;
 
 import java.sql.*;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MySQLUsersDao implements Users {
     private Connection connection;
@@ -24,6 +26,18 @@ public class MySQLUsersDao implements Users {
         }
     }
 
+    @Override
+    public List<User> all() {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM user");
+            ResultSet rs = stmt.executeQuery();
+
+            return createUserListsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
 
     @Override
     public User findByUsername(String username) {
@@ -79,6 +93,14 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    private List<User> createUserListsFromResults(ResultSet rs) throws SQLException {
+        List<User> ads = new ArrayList<>();
+        while (rs.next()) {
+            ads.add(extractUser(rs));
+        }
+        return ads;
+    }
+
     @Override
     public long updateUser(User user) {
 
@@ -111,6 +133,8 @@ public class MySQLUsersDao implements Users {
                 "location = ?)" +
                 "WHERE id ="+userId;
     }
+
+
 
     //        newUser.setId(rs.getInt("id"));
 //        newUser.setPassword(rs.getString("password"));
