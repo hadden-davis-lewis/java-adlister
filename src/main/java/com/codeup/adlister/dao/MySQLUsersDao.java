@@ -79,8 +79,40 @@ public class MySQLUsersDao implements Users {
         );
     }
 
+    @Override
+    public long updateUserById(User user) {
 
-//        newUser.setId(rs.getInt("id"));
+
+        try {
+            PreparedStatement stmt = connection.prepareStatement(Updatequery(user.getId()), Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, user.getFirst_name());
+            stmt.setString(2, user.getLast_name());
+            stmt.setString(3, user.getEmail());
+            stmt.setString(4, user.getUsername());
+            stmt.setString(5, user.getPassword());
+            stmt.setString(6, user.getLocation());
+
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating user", e);
+        }
+    }
+
+    private String Updatequery(long userId){
+        return "UPDATE user SET " +
+                "first_name = ?," +
+                "last_name = ?," +
+                "email = ?," +
+                "username = ?," +
+                "password = ?," +
+                "location = ?)" +
+                "WHERE id ="+userId;
+    }
+
+    //        newUser.setId(rs.getInt("id"));
 //        newUser.setPassword(rs.getString("password"));
 //        newUser.setFirst_name(rs.getString("first_name"));
 //        newUser.setLast_name(rs.getString("last_name"));
