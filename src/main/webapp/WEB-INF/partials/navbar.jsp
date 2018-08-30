@@ -3,7 +3,7 @@
 
         <div class="container-fluid">
             <nav class="navbar navbar-dark bg-dark">
-                Not-So-Bad Lister
+                <h1>Not-So-Bad Lister</h1>
 
                 <c:if test = "${sessionScope.user != null}">
                     <a href = "/logout">
