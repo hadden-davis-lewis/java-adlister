@@ -3,7 +3,7 @@
 
         <div class="container-fluid">
             <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-                <a class="navbar-brand" href="#"><h1>Not-So-Bad Lister</h1></a>
+                <a class="navbar-brand" href="/ads"><h1>Not-So-Bad Lister</h1></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -15,6 +15,9 @@
                     <c:if test = "${sessionScope.user != null}">
                         <a href = "/logout">
                             <button type="button" class="btn btn-dark">Logout</button>
+                        </a>
+                        <a href = "/profile">
+                            <button type="button" class="btn btn-dark">View Profile</button>
                         </a>
                     </c:if>
 
