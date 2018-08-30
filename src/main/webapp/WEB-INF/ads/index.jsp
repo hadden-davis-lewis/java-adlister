@@ -13,14 +13,15 @@
     <h1>Here Are all the ads!</h1>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-6">
-            <div class="card" style="width: 18rem;">
+        <div class="col-md-4 col-lg-4 col-sm-12">
+            <div class="card col-md-3 col-lg-3 col-sm-3" style="width: 18rem;">
                 <img class="card-img-top" src="http://placecage.com/c/200/300" alt="cage placeholder">
                 <div class="card-body">
                     <h5 class="card-title">${ad.title}</h5>
                     <p class="card-text">${ad.description}</p>
                     <a href="../ads/index.jsp" class="btn btn-primary">Return to Adds</a>
                     <a href="#" class="btn btn-primary">Interested? Click Here</a>
+                    <a href="#" class="btn btn-primary">Mark As Sold</a>
                 </div>
             </div>
         </div>

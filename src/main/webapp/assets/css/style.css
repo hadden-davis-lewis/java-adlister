@@ -2,3 +2,10 @@ body {
     background-color: papayawhip;
     font-family: 'Indie Flower', cursive;
 }
+h1 {
+    color: white; !important;
+}
+
+.card {
+    display:inline-block;
+}
