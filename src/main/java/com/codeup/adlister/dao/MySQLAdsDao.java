@@ -55,6 +55,60 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public List<Ad> getAdsByListerId(int listerId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ad WHERE user_id = ?");
+            stmt.setInt(1,listerId);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads by lister Id.", e);
+        }
+    }
+
+    @Override
+    public Ad getAdByAdId(int adId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ad WHERE ad_id = ?");
+            stmt.setInt(1,adId);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return extractAd(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving an ad by id.", e);
+        }
+    }
+
+    @Override
+    public List<Integer> getAdIdsByCategory(String category) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT ads_id FROM ads_categories WHERE category_id = ?");
+            stmt.setInt(1, getCategoryIdFromCategoryName(category));
+            ResultSet rs = stmt.executeQuery();
+            return createAdIdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ad Ids by category.", e);
+        }
+    }
+
+    private int getCategoryIdFromCategoryName(String category){
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT id FROM category WHERE name = ?");
+            stmt.setString(1, category);
+            ResultSet rs = stmt.executeQuery();
+            rs.next();
+            return rs.getInt("id");
+        } catch (SQLException e) {
+            throw new RuntimeException("Error returning category Id from category name", e);
+        }
+
+    }
+
     private Ad extractAd(ResultSet rs) throws SQLException {
         return new Ad(
             rs.getLong("id"),
@@ -74,5 +128,13 @@ public class MySQLAdsDao implements Ads {
             ads.add(extractAd(rs));
         }
         return ads;
+    }
+
+    private List<Integer> createAdIdsFromResults(ResultSet rs) throws SQLException {
+        List<Integer> adIds = new ArrayList<>();
+        while (rs.next()) {
+            adIds.add(rs.getInt("id"));
+        }
+        return adIds;
     }
 }
