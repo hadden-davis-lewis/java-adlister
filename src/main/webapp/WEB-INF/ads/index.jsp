@@ -20,7 +20,7 @@
     <c:forEach var="ad" items="${ads}">
         <div class="theCard col-12 col-md-3 col-lg-3 col-sm-12 col-xs-12">
             <div class="card">
-                <a href="/showAds?id=${ad.id}"><img class="card-img-top" src="http://placecage.com/c/200/300" alt="cage placeholder"></a>
+                <a href="/showAds?id=${ad.id}"><img class="card-img-top" src="${ad.photo}" alt="placeholder"></a>
                 <div class="card-body">
                     <h5 class="card-title">${ad.title}</h5>
                     <p class="card-text">${ad.description}</p>
