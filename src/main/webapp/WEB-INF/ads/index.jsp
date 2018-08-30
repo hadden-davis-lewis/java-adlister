@@ -9,12 +9,16 @@
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
-<div class="container">
-    <h1>Here Are all the ads!</h1>
+<div class="container-fluid text-center">
+    <h1 class="text-center">Here Are all the ads!</h1>
+    <!-- Search form -->
+    <div class="active-cyan-4 mb-4 col-lg-3 col-md-3 col-sm-10">
+        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
+    </div>
 
     <c:forEach var="ad" items="${ads}">
-        <div class="col-md-4 col-lg-4 col-sm-12">
-            <div class="card col-md-3 col-lg-3 col-sm-3" style="width: 18rem;">
+        <div class="theCard col-12 col-md-3 col-lg-3 col-sm-12 col-xs-12">
+            <div class="card">
                 <img class="card-img-top" src="http://placecage.com/c/200/300" alt="cage placeholder">
                 <div class="card-body">
                     <h5 class="card-title">${ad.title}</h5>

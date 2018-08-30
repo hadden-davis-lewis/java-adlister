@@ -2,10 +2,23 @@ body {
     background-color: papayawhip;
     font-family: 'Indie Flower', cursive;
 }
-h1 {
-    color: white; !important;
+.active-cyan-4 input[type=text]:focus:not([readonly]) {
+    border: 1px solid #4dd0e1;
+    box-shadow: 0 0 0 1px #4dd0e1;
+}
+.active-cyan-3 input[type=text] {
+    border: 1px solid #4dd0e1;
+    box-shadow: 0 0 0 1px #4dd0e1;
 }
 
-.card {
+.theCard {
     display:inline-block;
+    margin-left: 0;
+    margin-right: 0;
+    text-align: center;
+    padding: 0;
 }
+/*.container-fluid {*/
+    /*width: 80%; !important;*/
+    /*padding: 0;*/
+/*}*/
