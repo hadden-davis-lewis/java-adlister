@@ -72,7 +72,7 @@ public class MySQLAdsDao implements Ads {
     public Ad getAdByAdId(int adId) {
         PreparedStatement stmt = null;
         try {
-            stmt = connection.prepareStatement("SELECT * FROM ad WHERE ad_id = ?");
+            stmt = connection.prepareStatement("SELECT * FROM ad WHERE id = ?");
             stmt.setInt(1,adId);
             ResultSet rs = stmt.executeQuery();
             rs.next();
