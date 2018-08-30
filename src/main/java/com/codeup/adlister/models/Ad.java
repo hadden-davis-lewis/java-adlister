@@ -11,34 +11,47 @@ public class Ad {
     private String location;
     private String date_added;
 
-    public Ad(long id, long userId, String title, String description) {
+    public Ad() {
+    }
+
+
+
+    //    public Ad(long id, long userId, String title, String description) {
+//        this.id = id;
+//        this.userId = userId;
+//        this.title = title;
+//        this.description = description;
+//    }
+
+
+//    public Ad(long id, String title, String description, String photo) {
+//        this.id = id;
+//        this.title = title;
+//        this.description = description;
+//        this.photo = photo;
+//
+//    }
+
+    public Ad(long id, long userId, String title, String description, String photo, double price,String location) {
         this.id = id;
         this.userId = userId;
         this.title = title;
         this.description = description;
-    }
-
-    public Ad(long id, String title, String description) {
-    }
-
-    public Ad(long id, String title, String description, String photo) {
-        this.id = id;
-        this.title = title;
-        this.description = description;
         this.photo = photo;
-
-    }
-
-    public Ad(long id, long userId, String title, String description, String photo, String date_added, double price) {
-        this.id = id;
-        this.userId = userId;
-        this.title = title;
-        this.description = description;
-        this.photo = photo;
-        this.date_added = date_added;
         this.price = price;
+        this.location = location;
     }
 
+    public Ad(long id, long userId, String title, String description, String photo, double price, String location, String date_added) {
+        this.id = id;
+        this.userId = userId;
+        this.title = title;
+        this.description = description;
+        this.photo = photo;
+        this.price = price;
+        this.location = location;
+        this.date_added = date_added;
+    }
 
     public long getId() {
         return id;

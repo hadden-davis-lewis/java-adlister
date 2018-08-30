@@ -21,6 +21,14 @@
                 <label for="description">Photo</label>
                 <textarea id="photo" name="photo" class="form-control" type="text"></textarea>
             </div>
+            <div>
+                <label for="price">Price</label>
+                <input type="text" name="price" id="price">
+            </div>
+            <div>
+                <label for="location">location</label>
+                <input type="text" name="location" id="location">
+            </div>
             <input type="submit" class="btn btn-block btn-primary">
         </form>
     </div>
