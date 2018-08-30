@@ -80,7 +80,7 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
-    public long updateUserById(User user) {
+    public long updateUser(User user) {
 
 
         try {
