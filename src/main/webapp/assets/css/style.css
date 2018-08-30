@@ -18,8 +18,13 @@ body {
     text-align: center;
     padding: 0;
 }
-.message-form {
-
+.nav-btn {
+    margin: 1em;
+    float: right;
+}
+.main-btn {
+    margin: auto;
+    text-align: center;
 }
 /*.container-fluid {*/
     /*width: 80%; !important;*/

@@ -18,10 +18,12 @@
 
     <div class="container">
         <h1>Here is the Ad!</h1>
-
+        <img class="card-img-top" src="${ad.photo}" alt="placeholder">
         <h2>${ad.title}</h2>
         <p>${ad.description}</p>
-        <p>${ad.photo}</p>
+        <p>${ad.price}</p>
+
+
 
 
 
