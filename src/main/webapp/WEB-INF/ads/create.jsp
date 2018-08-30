@@ -6,6 +6,7 @@
     </jsp:include>
 </head>
 <body>
+<jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container">
         <h1>Create a new Ad</h1>
         <form action="/ads/create" method="post">
@@ -17,9 +18,13 @@
                 <label for="description">Description</label>
                 <textarea id="description" name="description" class="form-control" type="text"></textarea>
             </div>
+            <div>
+                <label for="photo">photo</label>
+                <input type="text" name="photo" id="photo">
+            </div>
             <div class="form-group">
-                <label for="description">Photo</label>
-                <textarea id="photo" name="photo" class="form-control" type="text"></textarea>
+                <label for="tags">Enter Search Tags</label>
+                <textarea id="tags" name="tags" class="form-control" type="text"></textarea>
             </div>
             <div>
                 <label for="price">Price</label>

@@ -10,11 +10,11 @@
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
 
 <div class="container-fluid text-center">
-    <h1 class="text-center">Here Are all the ads!</h1>
+    <h1 class="text-center">Welcome, ${sessionScope.user.username}! Here Are all the ads!</h1>
     <!-- Search form -->
-    <div class="text-center active-cyan-4 mb-4 col-lg-3 col-md-3 col-sm-10">
+    <div class="main-btn text-center active-cyan-4 mb-4 col-lg-6 col-md-6 col-sm-10">
         <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="main-btn btn btn-primary">Submit</button>
     </div>
 
     <c:forEach var="ad" items="${ads}">
