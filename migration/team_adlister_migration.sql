@@ -72,6 +72,18 @@ CREATE TABLE IF NOT EXISTS review (
 
 
 DROP TABLE IF EXISTS user_reviews;
+
+DROP TABLE IF EXISTS interested;
+
+CREATE TABLE interested(
+  user_id INT UNSIGNED NOT NULL,
+  ad_id INT UNSIGNED NOT NULL,
+  FOREIGN KEY (user_id) REFERENCES user(id),
+  FOREIGN KEY (ad_id) REFERENCES ad(id)
+)
+
+
+
 #
 # CREATE TABLE IF NOT EXISTS user_reviews (
 #   user_id INT UNSIGNED  NOT NULL,
