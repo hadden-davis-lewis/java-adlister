@@ -52,6 +52,18 @@ public class MySQLUsersDao implements Users {
     }
 
     @Override
+    public User findUserById(int userID) {
+        String query = "SELECT * FROM user WHERE id = ? LIMIT 1";
+        try {
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setInt(1, userID);
+            return extractUser(stmt.executeQuery());
+        } catch (SQLException e) {
+            throw new RuntimeException("Error finding a user by username", e);
+        }
+    }
+
+    @Override
     public Long insert(User user) {
 
         String query = "INSERT INTO user(first_name, last_name, email, username, password, location, user_since, profile_pic) VALUES (?,?,?,?,?,?,NOW(),?)";

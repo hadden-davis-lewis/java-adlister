@@ -16,4 +16,8 @@ public interface Ads {
 
     List<Integer> getAdIdsByCategory(String category);
 
+    Long delete(int adId);
+
+    Long edit(Ad ad);
+
 }

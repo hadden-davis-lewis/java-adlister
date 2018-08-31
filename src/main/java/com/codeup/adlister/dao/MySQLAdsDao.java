@@ -95,6 +95,48 @@ public class MySQLAdsDao implements Ads {
         }
     }
 
+    @Override
+    public Long delete(int adId) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("DELETE FROM ad WHERE user_id = ?");
+            stmt.setInt(1,adId);
+            stmt.executeQuery();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads by lister Id.", e);
+        }
+    }
+
+    @Override
+    public Long edit(Ad ad) {
+        try {
+            PreparedStatement stmt = connection.prepareStatement(Updatequery(ad.getId()), Statement.RETURN_GENERATED_KEYS);
+            stmt.setString(1, ad.getTitle());
+            stmt.setString(2, ad.getDescription());
+            stmt.setString(3, ad.getPhoto());
+            stmt.setString(4, ad.getLocation());
+
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error updating user", e);
+        }
+    }
+
+    private String Updatequery(long userId){
+        return "UPDATE ad SET " +
+                "title = ?," +
+                "description = ?," +
+                "photo = ?," +
+                "location = ?," +
+                "WHERE id ="+userId;
+    }
+
     private int getCategoryIdFromCategoryName(String category){
         PreparedStatement stmt = null;
         try {
