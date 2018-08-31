@@ -6,14 +6,13 @@
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />
-
+<br/><br/>
 <div class="container-fluid text-center">
-    <h1 class="text-center">Welcome ${sessionScope.user.username} Here Are all the ads!</h1>
     <!-- Search form -->
     <div class="main-btn text-center active-cyan-4 mb-4 col-lg-6 col-md-6 col-sm-10">
         <form action="/ads" method="POST">
              <input name="searchString" class="form-control" type="text" placeholder="Search" aria-label="Search">
-             <button type="submit" class="main-btn btn btn-primary">Submit</button>
+             <button type="submit" class="main-btn btn btn-primary"><i class="fas fa-dollar-sign"></i>earch</button>
         </form>
     </div>
 

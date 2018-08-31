@@ -25,7 +25,7 @@
         <div class="show-ad">
             <h2 class="card2-title">Seller Info</h2>
             ///how to get the user profile\\\
-                <a href="/profile?lister=${ad.userId}">
+                <a href="/profile?listerId=${ad.userId}">
                     <div class="user-circle"><img class="show-profile"src="${lister.profile_pic}"></div>
                 </a>
             <p class="card2-info">${lister.username}</p>
