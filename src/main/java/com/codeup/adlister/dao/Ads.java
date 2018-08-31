@@ -16,4 +16,7 @@ public interface Ads {
 
     List<Integer> getAdIdsByCategory(String category);
 
+    List<Ad> getAdByTitle(String title);
+
+
 }

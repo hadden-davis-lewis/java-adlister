@@ -13,9 +13,16 @@
     <h1 class="text-center">Welcome ${sessionScope.user.username} Here Are all the ads!</h1>
     <!-- Search form -->
     <div class="main-btn text-center active-cyan-4 mb-4 col-lg-6 col-md-6 col-sm-10">
-        <input class="form-control" type="text" placeholder="Search" aria-label="Search">
-        <button type="submit" class="main-btn btn btn-primary">Submit</button>
+        <form action="/ads" method="POST">
+             <input name="searchString" class="form-control" type="text" placeholder="Search" aria-label="Search">
+             <button type="submit" class="main-btn btn btn-primary">Submit</button>
+        </form>
     </div>
+
+        <c:if test = "${ads.size() == 0}">
+            <jsp:include page="/WEB-INF/partials/notfound.jsp" />
+        </c:if>
+    <%--<h1>${ads}</h1>--%>
 
     <c:forEach var="ad" items="${ads}">
         <div class="theCard col-12 col-md-3 col-lg-3 col-sm-12 col-xs-12">
