@@ -42,7 +42,7 @@ public class User {
         setPassword(password);
     }
 
-    public User(int id, String first_name, String last_name, String username, String email, String password, String location, String user_since) {
+    public User(int id, String first_name, String last_name, String username, String email, String password, String location, String user_since, String profile_pic) {
         this.first_name = first_name;
         this.last_name = last_name;
         this.email = email;
@@ -51,6 +51,18 @@ public class User {
         this.username = username;
         this.id = id;
         this.user_since = user_since;
+        this.profile_pic = profile_pic;
+    }
+
+    public User(String first_name, String last_name, String username, String email, String password, String location, String profile_pic) {
+        this.first_name = first_name;
+        this.last_name = last_name;
+        this.email = email;
+        this.password = password;
+        this.location = location;
+        this.username = username;
+        this.profile_pic = profile_pic;
+        setPassword(password);
     }
 
 //    public User(int id, String password, String first_name, String last_name, String email, String username, String password1, String location, String user_since) {

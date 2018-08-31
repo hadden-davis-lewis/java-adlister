@@ -5,13 +5,13 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 
-    <div class="profile-container">
+    <div class="profile-container text-center">
+        <img class="show-user-profile"src="${sessionScope.user.profile_pic}">
         <h4><strong>First Name:   </strong><em>${sessionScope.user.first_name}</em></h4>
         <h4><strong>Last Name:   </strong><em>${sessionScope.user.last_name}</em></h4>
         <h4><strong>Email:   </strong><em>${sessionScope.user.email}</em></h4>
         <h4><strong>Member Location:   </strong><em>${sessionScope.user.location}</em></h4>
         <h4><strong>Member Since:   </strong><em>${sessionScope.user.user_since}</em></h4>
-        <h4><strong>Profile Image:   </strong><em>${sessionScope.user.profile_pic}</em></h4>
+        <button class="edit-button text-center">Edit My Profile</button>
     </div>
         <br>
-    <button>Edit My Profile</button>

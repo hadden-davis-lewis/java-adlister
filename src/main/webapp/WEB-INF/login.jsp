@@ -23,5 +23,6 @@
         <a href="/register"><button>Signup</button></a>
     </div>
     <jsp:include page="/WEB-INF/partials/bundler.jsp" />
+    <jsp:include page="/WEB-INF/partials/footer.jsp" />
 </body>
 </html>
