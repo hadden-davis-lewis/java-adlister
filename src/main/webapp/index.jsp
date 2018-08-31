@@ -3,9 +3,7 @@
 <html>
 <head>
 
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Welcome to my site!" />
-    </jsp:include>
+    <jsp:include page="/WEB-INF/partials/head.jsp"/>
     <%--<link href="css/style.css" rel="stylesheet" >--%>
 </head>
 <body>
