@@ -137,6 +137,19 @@ public class MySQLAdsDao implements Ads {
                 "WHERE id ="+userId;
     }
 
+    @Override
+    public List<Ad> getAdByTitle(String title) {
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM ad WHERE title LIKE ?");
+            stmt.setString(1,title);
+            ResultSet rs = stmt.executeQuery();
+            return createAdsFromResults(rs);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving ads by lister Id.", e);
+        }
+    }
+
     private int getCategoryIdFromCategoryName(String category){
         PreparedStatement stmt = null;
         try {
