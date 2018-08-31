@@ -20,4 +20,6 @@ public interface Ads {
 
     Long edit(Ad ad);
 
+    List<Ad> getAdByTitle(String title);
+
 }
