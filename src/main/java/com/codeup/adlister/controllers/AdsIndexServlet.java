@@ -13,6 +13,10 @@ import java.io.IOException;
 public class AdsIndexServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //all users
+        if (request.getSession().getAttribute("user") == null) {
+            response.sendRedirect("/login");
+            return;
+        }
 
         request.setAttribute("user", DaoFactory.getUsersDao().all());
         request.setAttribute("ads", DaoFactory.getAdsDao().all());
@@ -21,11 +25,13 @@ public class AdsIndexServlet extends HttpServlet {
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 
         req.setAttribute("ads",DaoFactory.getAdsDao().getAdByTitle(req.getParameter("searchString")));
-
         req.getRequestDispatcher("/WEB-INF/ads/index.jsp").forward(req, resp);
+    }
+
+
 
 
     }
-}
+
 
 //login required
