@@ -137,4 +137,54 @@ public class MySQLAdsDao implements Ads {
         }
         return adIds;
     }
+
+    private long addInterest(int userId, int adID){
+        try {
+            String insertQuery = "INSERT INTO interested(user_id, ad_id) VALUES (?, ?)";
+            PreparedStatement stmt = connection.prepareStatement(insertQuery, Statement.RETURN_GENERATED_KEYS);
+            stmt.setInt(1, userId);
+            stmt.setInt(2, adID);
+
+            stmt.executeUpdate();
+            ResultSet rs = stmt.getGeneratedKeys();
+            rs.next();
+            return rs.getLong(1);
+        } catch (SQLException e) {
+            throw new RuntimeException("Error adding a new interest", e);
+        }
+    }
+
+    private boolean isInterested(int userId, int adId){
+        PreparedStatement stmt = null;
+        try {
+            stmt = connection.prepareStatement("SELECT * FROM interested");
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                if(userId == rs.getInt("user_id") && adId == rs.getInt("ad_id")){
+                    return true;
+
+                }
+            }
+            return false;
+
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
+
+    private List<Integer> getAllInterestAdIdsByUserId(int userId){
+        PreparedStatement stmt = null;
+        List<Integer> myInterest = new ArrayList<>();
+        try {
+            stmt = connection.prepareStatement("SELECT ad_id FROM interested WHERE user_id = ?");
+            stmt.setInt(1,userId);
+            ResultSet rs = stmt.executeQuery();
+            while(rs.next()){
+                myInterest.add(rs.getInt("ad_id"));
+            }
+            return myInterest;
+        } catch (SQLException e) {
+            throw new RuntimeException("Error retrieving all ads.", e);
+        }
+    }
 }
