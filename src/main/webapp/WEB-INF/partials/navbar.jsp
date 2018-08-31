@@ -16,8 +16,8 @@
                         <a href = "/logout">
                             <button type="button" class="btn btn-dark nav-btn">Logout</button>
                         </a>
-                        <a href = "/profile">
-                            <button type="button" class="btn btn-dark nav-btn">View Profile</button>
+                        <a href = "/profile?listerId=${sessionScope.user.id}">
+                            <button type="button" class="btn btn-dark nav-btn">View Profile </button>
                         </a>
                         <a href = "/ads/create">
                             <button type="button" class="btn btn-dark nav-btn">Post Ad</button>
@@ -25,11 +25,11 @@
 
                     </c:if>
 
-                    <c:if test = "${sessionScope.user == null}">
-                        <a href = "/login">
-                            <button type="button" class="btn btn-dark">Login</button>
-                        </a>
-                    </c:if>
+                    <%--<c:if test = "${sessionScope.user == null}">--%>
+                        <%--<a href = "/login">--%>
+                            <%--<button type="button" class="btn btn-dark">Login</button>--%>
+                        <%--</a>--%>
+                    <%--</c:if>--%>
 
                 </div>
             </nav>
