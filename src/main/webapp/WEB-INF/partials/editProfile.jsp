@@ -13,23 +13,23 @@
     <form action="/editProfile" method="post">
         <div class="form-group">
             <label for="first_name">First Name</label>
-            <input id="first_name" name="first_name" class="form-control" type="text" value="${user.getFirst_name()}">
+            <input id="first_name" name="first_name" class="form-control" type="text" value="${lister.first_name()}">
         </div>
         <div class="form-group">
             <label for="last_name">Last Name</label>
-            <input id="last_name" name="last_name" class="form-control" type="text" value="${user.getLast_name()}">
+            <input id="last_name" name="last_name" class="form-control" type="text" value="${lister.last_name()}">
         </div>
         <div class="form-group">
             <label for="location">Location</label>
-            <input id="location" name="location" class="form-control" type="text" value="${user.getLocation()}">
+            <input id="location" name="location" class="form-control" type="text" value="${lister.location()}">
         </div>
         <div class="form-group">
             <label for="username">Username</label>
-            <input id="username" name="username" class="form-control" type="text" value="${user.getUsername()}">
+            <input id="username" name="username" class="form-control" type="text" value="${lister.username()}">
         </div>
         <div class="form-group">
             <label for="email">Email</label>
-            <input id="email" name="email" class="form-control" type="text" value="${user.getEmail()}">
+            <input id="email" name="email" class="form-control" type="text" value="${lister.email()}">
         </div>
 
         <input type="submit" class="btn btn-primary btn-block">

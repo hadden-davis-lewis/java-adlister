@@ -6,12 +6,12 @@
 
 
     <div class="profile-container text-center">
-        <img class="show-user-profile"src="${sessionScope.user.profile_pic}">
-        <h4><strong>First Name:   </strong><em>${sessionScope.user.first_name}</em></h4>
-        <h4><strong>Last Name:   </strong><em>${sessionScope.user.last_name}</em></h4>
-        <h4><strong>Email:   </strong><em>${sessionScope.user.email}</em></h4>
-        <h4><strong>Member Location:   </strong><em>${sessionScope.user.location}</em></h4>
-        <h4><strong>Member Since:   </strong><em>${sessionScope.user.user_since}</em></h4>
+        <img class="show-user-profile"src="${lister.profile_pic}">
+        <h4><strong>First Name:   </strong><em>${lister.first_name}</em></h4>
+        <h4><strong>Last Name:   </strong><em>${lister.last_name}</em></h4>
+        <h4><strong>Email:   </strong><em>${lister.email}</em></h4>
+        <h4><strong>Member Location:   </strong><em>${listere.location}</em></h4>
+        <h4><strong>Member Since:   </strong><em>${lister.user_since}</em></h4>
         <button class="edit-button text-center">Edit My Profile</button>
     </div>
         <br>
