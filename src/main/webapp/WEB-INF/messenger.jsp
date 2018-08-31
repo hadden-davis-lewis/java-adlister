@@ -9,9 +9,7 @@
 <html>
 <head>
     <title>Messenger</title>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Messenger" />
-    </jsp:include>
+    <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
 <jsp:include page="/WEB-INF/partials/navbar.jsp" />

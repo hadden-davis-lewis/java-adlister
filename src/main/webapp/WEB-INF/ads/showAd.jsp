@@ -9,9 +9,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
-    <jsp:include page="/WEB-INF/partials/head.jsp">
-        <jsp:param name="title" value="Viewing the Ad" />
-    </jsp:include>
+    <jsp:include page="/WEB-INF/partials/head.jsp"/>
 </head>
 <body>
     <jsp:include page="/WEB-INF/partials/navbar.jsp" />
@@ -26,12 +24,13 @@
             <br/><br/>
         <div class="show-ad">
             <h2 class="card2-title">Seller Info</h2>
-                <a href="/profile">
-                    <div class="user-circle"><img class="show-profile"src="${user.profile_pic}"></div>
+            ///how to get the user profile\\\
+                <a href="/profile?lister=${ad.userId}">
+                    <div class="user-circle"><img class="show-profile"src="${lister.profile_pic}"></div>
                 </a>
-            <p class="card2-info">${user.username}</p>
-            <p class="card2-info">${user.location}</p>
-            <P class="card2-info">User Rating Goes Here</P>
+            <p class="card2-info">${lister.username}</p>
+            <p class="card2-info">${lister.location}</p>
+            <P class="card2-info">Lister Rating Goes Here</P>
         </div>
 
     <jsp:include page="/WEB-INF/partials/bundler.jsp" />
