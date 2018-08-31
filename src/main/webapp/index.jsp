@@ -9,10 +9,31 @@
     <%--<link href="css/style.css" rel="stylesheet" >--%>
 </head>
 <body>
-    <jsp:include page="/WEB-INF/partials/navbar.jsp" />
     <div class="container-fluid">
-        <h1>Welcome to the Not-so-Bad Lister!</h1>
+        <div class="jumbotron">
+            <div class="container text-center">
+                <div class="banner text-center">
+                    <h1 class="display-4">Not So Bad Lister</h1>
+                </div>
+                    <a class="login-feature" href="/login"> <div class="theCard box col-sm-12 col-12 col-md-5 col-lg-5 col-xl-5">
+                        <div class="card-login">
+                            <div class="jumbo-card-body">
+                                Already a User? Login Here and continue shopping!
+                            </div>
+                        </div>
+                    </div></a>
+                    <a class="register-feature" href="/register"><div class="theCard box col-sm-12 col-12 col-md-5 col-lg-5 col-xl-5">
+                         <div class="card-register">
+                             <div class="jumbo-card-body">
+                                New User? Register Here and start shopping!
+                             </div>
+                         </div>
+                    </div></a>
+            </div>
+        </div>
     </div>
+
+
     <jsp:include page="/WEB-INF/partials/bundler.jsp" />
 </body>
 </html>
