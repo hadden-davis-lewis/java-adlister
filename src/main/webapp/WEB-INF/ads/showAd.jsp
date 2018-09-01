@@ -16,15 +16,16 @@
 
 
         <div class="card2 text-center">
-            <img class="card2-img-top" src="${ad.photo}" alt="placeholder">
-            <h2 class="card2-title">${ad.title.toUpperCase()}</h2>
-            <p class="card2-info">${ad.description}</p>
-            <p class="card2-info">${ad.price}</p>
+            <div class="image-holder">
+                <img class="card2-img-top" src="${ad.photo}" alt="placeholder">
+                <h2 class="card2-title">${ad.title.toUpperCase()}</h2>
+                <p class="card2-info">${ad.description}</p>
+                <p class="card2-info">${ad.price}</p>
+            </div>
         </div>
             <br/><br/>
         <div class="show-ad">
             <h2 class="card2-title">Seller Info</h2>
-            ///how to get the user profile\\\
                 <a href="/profile?listerId=${ad.userId}">
                     <div class="user-circle"><img class="show-profile"src="${lister.profile_pic}"></div>
                 </a>
