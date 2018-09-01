@@ -125,6 +125,14 @@ body {
 .card-img-top {
     height: 12em;
 }
+.login-cage {
+    -webkit-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+    -moz-box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+    box-shadow: 4px 4px 0px 0px rgba(0,0,0,0.75);
+    margin: 1em auto auto auto;
+    background-color: whitesmoke;
+}
+
 
 /*.container-fluid {*/
     /*width: 80%; !important;*/

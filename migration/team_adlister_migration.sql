@@ -15,7 +15,7 @@ CREATE TABLE IF NOT EXISTS user (
   username VARCHAR(100) NOT NULL UNIQUE,
   password VARCHAR(255) NOT NULL,
   location VARCHAR(255) NOT NULL,
-  profile_pic VARCHAR(255) NOT NULL DEFAULT 'www.https://Placeholder Url Photo',
+  profile_pic VARCHAR(255) NOT NULL DEFAULT 'http://baconmockup.com/300/200',
   user_since VARCHAR(100) NOT NULL,
   PRIMARY KEY (id)
 );
